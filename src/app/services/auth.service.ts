@@ -35,4 +35,8 @@ export class AuthService {
         map(users => users.some(user => user.email === email && user.username === username))
       );
   }
+
+  register(user: { username: string, email: string, phone: string, password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users`, user);
+  }
 }

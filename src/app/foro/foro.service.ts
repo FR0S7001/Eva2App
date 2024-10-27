@@ -7,12 +7,12 @@ import { Topic } from './foro.model'; // Importa la interfaz
   providedIn: 'root'
 })
 export class ForoService {
-  private apiUrl = 'http://localhost:3000/topics'; // Asegúrate de que esta URL sea correcta
+  private apiUrl = 'http://localhost:3000/topics'; // url de json-server
 
   constructor(private http: HttpClient) {}
 
   getTopics(): Observable<Topic[]> {
-    return this.http.get<Topic[]>(this.apiUrl);
+    return this.http.get<Topic[]>(this.apiUrl); 
   }
 
   addTopic(topic: Topic): Observable<Topic> {
